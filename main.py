@@ -9,7 +9,7 @@ db = database.database("url.db")
 @app.route("/encode")
 def encode():
     data = request.data
-    shortened = db.store_url(data)
+    shortened = db.store_url(str(data))
     return jsonify({'url': "https://short.est/" + shortened})
 
 
