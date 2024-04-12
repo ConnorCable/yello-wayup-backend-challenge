@@ -14,6 +14,7 @@ class database:
     def store_url(self, url):
         url_id = str(uuid.uuid4())
         self.cursor.execute("INSERT INTO urls (id, url) VALUES (?, ?) ", (url_id, url))
+        return url_id
 
     def get_url(self, url):
         self.cursor.execute("SELECT url FROM urls WHERE ID = ?", url)
@@ -21,4 +22,4 @@ class database:
         if result:
             return result
         else:
-            return "No such url"
+            return None
