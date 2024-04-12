@@ -32,6 +32,6 @@ class database:
         result = cursor.fetchone()
         conn.close()
         if result:
-            return result[0]
+            return str(result[0])
         else:
             return None
