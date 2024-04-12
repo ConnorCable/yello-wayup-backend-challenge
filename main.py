@@ -3,7 +3,7 @@ import database
 
 app = Flask(__name__)
 
-db = database.database()
+db = database.database("url.db")
 
 
 @app.route("/encode")
