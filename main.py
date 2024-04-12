@@ -1,8 +1,9 @@
 from flask import Flask, request, jsonify
-import base64
+import database
 
 app = Flask(__name__)
 
+db = database.database()
 
 @app.route("/encode")
 def encode():
